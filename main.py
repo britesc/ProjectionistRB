@@ -7,7 +7,7 @@ import traceback
 
 from PySide6.QtWidgets import QApplication
 
-from mainwindow import MainWindow
+from main.mainwindow import MainWindow
 
 
 def main() -> None:

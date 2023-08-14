@@ -21,7 +21,7 @@ from PySide6.QtWidgets import (QApplication, QGridLayout, QGroupBox, QHBoxLayout
     QWidget)
 
 class Ui_MainWindow(object):
-    def setupUi(self, MainWindow) -> None:
+    def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(996, 639)

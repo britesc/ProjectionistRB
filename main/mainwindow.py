@@ -40,7 +40,7 @@ from sqlitedict import (
     SqliteDict
 )
 
-from mainwindow_ui import Ui_MainWindow
+from main.mainwindow_ui import Ui_MainWindow
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, app) -> None:
