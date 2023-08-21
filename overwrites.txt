@@ -1,0 +1,14 @@
+
+Overwrites used normally in Designer Generated Files
+
+Original:
+import buttonsGlassRound_rc
+import png_rc
+import readfiles_rc
+import splash_rc
+
+Replacement:
+import resources.buttonsGlassRound_rc
+import resources.png_rc
+import resources.readfiles_rc
+import resources.splash_rc
