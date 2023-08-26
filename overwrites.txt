@@ -12,3 +12,15 @@ import resources.buttonsGlassRound_rc
 import resources.png_rc
 import resources.readfiles_rc
 import resources.splash_rc
+
+@classmethod
+def get_key_modifiers(cls):
+    QModifiers = Qt.QtWidgets.QApplication.keyboardModifiers()
+    modifiers = []
+    if (QModifiers & Qt.QtCore.Qt.ShiftModifier) == Qt.QtCore.Qt.ShiftModifier:
+        modifiers.append('shift')
+    if (QModifiers & Qt.QtCore.Qt.ControlModifier) == Qt.QtCore.Qt.ControlModifier:
+        modifiers.append('control')
+    if (QModifiers & Qt.QtCore.Qt.AltModifier) == Qt.QtCore.Qt.AltModifier:
+        modifiers.append('alt')
+    return modifiers
