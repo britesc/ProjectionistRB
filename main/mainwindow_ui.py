@@ -16,9 +16,10 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QGridLayout, QHBoxLayout, QMainWindow,
-    QPushButton, QSizePolicy, QStackedWidget, QStatusBar,
-    QTabWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QGroupBox, QHBoxLayout,
+    QMainWindow, QPushButton, QSizePolicy, QStackedWidget,
+    QStatusBar, QTabWidget, QToolButton, QVBoxLayout,
+    QWidget)
 import resources.buttonsGlassRound_rc
 import resources.png_rc
 import resources.readfiles_rc
@@ -28,7 +29,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(451, 653)
+        MainWindow.resize(1197, 589)
         icon = QIcon()
         icon.addFile(u":/Images/png/projectionist.png", QSize(), QIcon.Normal, QIcon.Off)
         MainWindow.setWindowIcon(icon)
@@ -50,16 +51,21 @@ class Ui_MainWindow(object):
         self.action_Quit = QAction(MainWindow)
         self.action_Quit.setObjectName(u"action_Quit")
         icon4 = QIcon()
-        icon4.addFile(u":/buttons/glassRound/glassButtonQuit.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u":/buttons/glassRound/glassButtonExit.png", QSize(), QIcon.Normal, QIcon.Off)
         self.action_Quit.setIcon(icon4)
+        self.action_Help_Master = QAction(MainWindow)
+        self.action_Help_Master.setObjectName(u"action_Help_Master")
+        icon5 = QIcon()
+        icon5.addFile(u":/buttons/glassRound/glassButtonHelp2.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.action_Help_Master.setIcon(icon5)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_1_Top = QVBoxLayout()
         self.verticalLayout_1_Top.setObjectName(u"verticalLayout_1_Top")
-        self.horizontalLayout = QHBoxLayout()
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout_RibbonBar = QHBoxLayout()
+        self.horizontalLayout_RibbonBar.setObjectName(u"horizontalLayout_RibbonBar")
         self.gridLayout_1_Left = QGridLayout()
         self.gridLayout_1_Left.setSpacing(0)
         self.gridLayout_1_Left.setObjectName(u"gridLayout_1_Left")
@@ -85,9 +91,9 @@ class Ui_MainWindow(object):
         self.pushButton_R0C3.setObjectName(u"pushButton_R0C3")
         self.pushButton_R0C3.setMinimumSize(QSize(32, 32))
         self.pushButton_R0C3.setMaximumSize(QSize(32, 32))
-        icon5 = QIcon()
-        icon5.addFile(u":/Images/png/arrowdown.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_R0C3.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u":/Images/png/arrowdown.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_R0C3.setIcon(icon6)
         self.pushButton_R0C3.setIconSize(QSize(16, 16))
         self.pushButton_R0C3.setFlat(True)
 
@@ -111,9 +117,9 @@ class Ui_MainWindow(object):
         self.pushButton_R2C0.setObjectName(u"pushButton_R2C0")
         self.pushButton_R2C0.setMinimumSize(QSize(32, 32))
         self.pushButton_R2C0.setMaximumSize(QSize(32, 32))
-        icon6 = QIcon()
-        icon6.addFile(u":/Images/png/help2.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_R2C0.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u":/Images/png/help2.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_R2C0.setIcon(icon7)
         self.pushButton_R2C0.setIconSize(QSize(32, 32))
         self.pushButton_R2C0.setFlat(True)
 
@@ -165,29 +171,90 @@ class Ui_MainWindow(object):
         self.pushButton_R3C3.setObjectName(u"pushButton_R3C3")
         self.pushButton_R3C3.setMinimumSize(QSize(32, 32))
         self.pushButton_R3C3.setMaximumSize(QSize(32, 32))
-        icon7 = QIcon()
-        icon7.addFile(u":/Images/png/arrowup.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_R3C3.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u":/Images/png/arrowup.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_R3C3.setIcon(icon8)
         self.pushButton_R3C3.setFlat(True)
 
         self.gridLayout_1_Left.addWidget(self.pushButton_R3C3, 3, 3, 1, 1)
 
 
-        self.horizontalLayout.addLayout(self.gridLayout_1_Left)
+        self.horizontalLayout_RibbonBar.addLayout(self.gridLayout_1_Left)
 
         self.tabWidget = QTabWidget(self.centralwidget)
         self.tabWidget.setObjectName(u"tabWidget")
-        self.tab_3 = QWidget()
-        self.tab_3.setObjectName(u"tab_3")
-        self.tabWidget.addTab(self.tab_3, "")
-        self.tab_4 = QWidget()
-        self.tab_4.setObjectName(u"tab_4")
-        self.tabWidget.addTab(self.tab_4, "")
+        self.tab_1_Home = QWidget()
+        self.tab_1_Home.setObjectName(u"tab_1_Home")
+        self.groupBox_1_Home = QGroupBox(self.tab_1_Home)
+        self.groupBox_1_Home.setObjectName(u"groupBox_1_Home")
+        self.groupBox_1_Home.setGeometry(QRect(0, 0, 161, 102))
+        self.groupBox_1_Home.setFlat(True)
+        self.verticalLayout = QVBoxLayout(self.groupBox_1_Home)
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout = QGridLayout()
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.toolButton_4 = QToolButton(self.groupBox_1_Home)
+        self.toolButton_4.setObjectName(u"toolButton_4")
 
-        self.horizontalLayout.addWidget(self.tabWidget)
+        self.gridLayout.addWidget(self.toolButton_4, 1, 2, 1, 1)
+
+        self.toolButton_3 = QToolButton(self.groupBox_1_Home)
+        self.toolButton_3.setObjectName(u"toolButton_3")
+        self.toolButton_3.setMinimumSize(QSize(0, 0))
+        self.toolButton_3.setMaximumSize(QSize(16777215, 16777215))
+
+        self.gridLayout.addWidget(self.toolButton_3, 0, 1, 1, 1)
+
+        self.toolButton_2 = QToolButton(self.groupBox_1_Home)
+        self.toolButton_2.setObjectName(u"toolButton_2")
+        self.toolButton_2.setMinimumSize(QSize(0, 0))
+        self.toolButton_2.setMaximumSize(QSize(16777215, 16777215))
+
+        self.gridLayout.addWidget(self.toolButton_2, 0, 2, 1, 1)
+
+        self.toolButton = QToolButton(self.groupBox_1_Home)
+        self.toolButton.setObjectName(u"toolButton")
+        self.toolButton.setMinimumSize(QSize(0, 0))
+        self.toolButton.setMaximumSize(QSize(16777215, 16777215))
+
+        self.gridLayout.addWidget(self.toolButton, 0, 0, 1, 1)
+
+        self.toolButton_5 = QToolButton(self.groupBox_1_Home)
+        self.toolButton_5.setObjectName(u"toolButton_5")
+
+        self.gridLayout.addWidget(self.toolButton_5, 1, 3, 1, 1)
 
 
-        self.verticalLayout_1_Top.addLayout(self.horizontalLayout)
+        self.verticalLayout.addLayout(self.gridLayout)
+
+        self.horizontalLayout = QHBoxLayout()
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.pushButton = QPushButton(self.groupBox_1_Home)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setFlat(True)
+
+        self.horizontalLayout.addWidget(self.pushButton)
+
+
+        self.verticalLayout.addLayout(self.horizontalLayout)
+
+        self.verticalLayout.setStretch(0, 3)
+        self.verticalLayout.setStretch(1, 1)
+        self.tabWidget.addTab(self.tab_1_Home, "")
+        self.tab_2_Edit = QWidget()
+        self.tab_2_Edit.setObjectName(u"tab_2_Edit")
+        self.tabWidget.addTab(self.tab_2_Edit, "")
+        self.tab_3_Configuration = QWidget()
+        self.tab_3_Configuration.setObjectName(u"tab_3_Configuration")
+        self.tabWidget.addTab(self.tab_3_Configuration, "")
+
+        self.horizontalLayout_RibbonBar.addWidget(self.tabWidget)
+
+
+        self.verticalLayout_1_Top.addLayout(self.horizontalLayout_RibbonBar)
 
 
         self.verticalLayout_2.addLayout(self.verticalLayout_1_Top)
@@ -196,20 +263,20 @@ class Ui_MainWindow(object):
         self.verticalLayout_2_Bottom.setObjectName(u"verticalLayout_2_Bottom")
         self.stackedWidget = QStackedWidget(self.centralwidget)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.page = QWidget()
-        self.page.setObjectName(u"page")
-        self.stackedWidget.addWidget(self.page)
-        self.page_2 = QWidget()
-        self.page_2.setObjectName(u"page_2")
-        self.stackedWidget.addWidget(self.page_2)
+        self.page_Home = QWidget()
+        self.page_Home.setObjectName(u"page_Home")
+        self.stackedWidget.addWidget(self.page_Home)
+        self.page_Edit = QWidget()
+        self.page_Edit.setObjectName(u"page_Edit")
+        self.stackedWidget.addWidget(self.page_Edit)
 
         self.verticalLayout_2_Bottom.addWidget(self.stackedWidget)
 
 
         self.verticalLayout_2.addLayout(self.verticalLayout_2_Bottom)
 
-        self.verticalLayout_2.setStretch(0, 2)
-        self.verticalLayout_2.setStretch(1, 5)
+        self.verticalLayout_2.setStretch(0, 1)
+        self.verticalLayout_2.setStretch(1, 999)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QStatusBar(MainWindow)
         self.statusbar.setObjectName(u"statusbar")
@@ -218,6 +285,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
 
         self.pushButton_R0C0.setDefault(False)
+        self.tabWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -250,6 +318,10 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(shortcut)
         self.action_Quit.setShortcut(QCoreApplication.translate("MainWindow", u"Ctrl+Q", None))
 #endif // QT_CONFIG(shortcut)
+        self.action_Help_Master.setText(QCoreApplication.translate("MainWindow", u"Help", None))
+#if QT_CONFIG(tooltip)
+        self.action_Help_Master.setToolTip(QCoreApplication.translate("MainWindow", u"Open Help...", None))
+#endif // QT_CONFIG(tooltip)
         self.pushButton_R0C0.setText("")
         self.pushButton_R0C2.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.pushButton_R0C3.setText("")
@@ -263,7 +335,15 @@ class Ui_MainWindow(object):
         self.pushButton_R3C1.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.pushButton_R3C2.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.pushButton_R3C3.setText("")
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("MainWindow", u"Tab 1", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("MainWindow", u"Tab 2", None))
+        self.groupBox_1_Home.setTitle("")
+        self.toolButton_4.setText(QCoreApplication.translate("MainWindow", u"...", None))
+        self.toolButton_3.setText(QCoreApplication.translate("MainWindow", u"...", None))
+        self.toolButton_2.setText(QCoreApplication.translate("MainWindow", u"...", None))
+        self.toolButton.setText(QCoreApplication.translate("MainWindow", u"...", None))
+        self.toolButton_5.setText(QCoreApplication.translate("MainWindow", u"...", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_1_Home), QCoreApplication.translate("MainWindow", u"Home", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2_Edit), QCoreApplication.translate("MainWindow", u"Edit", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3_Configuration), QCoreApplication.translate("MainWindow", u"Configuration", None))
     # retranslateUi
 

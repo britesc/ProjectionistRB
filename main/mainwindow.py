@@ -7,12 +7,13 @@ from PySide6 import (
 
 from PySide6.QtCore import (
     QSize,
-    QFileInfo
+    QFileInfo,
+    QRect
 )
     
 from PySide6.QtGui import (
     QAction,
-    # QIcon,
+    QIcon,
     QPixmap,
     QMouseEvent
 )
@@ -31,7 +32,7 @@ from PySide6.QtWidgets import (
     # QHBoxLayout,
     # QTableView,
     QLabel,
-    QMenu
+    QMenu,
 )    
 
 from PySide6.QtCore import (
@@ -42,6 +43,8 @@ from PySide6.QtCore import (
 from sqlitedict import (
     SqliteDict
 )
+
+
 
 from main.mainwindow_ui import Ui_MainWindow
 
@@ -87,3 +90,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def R0C0_actionQuit(self) -> None:
         print("Action Quit Clicked") 
         
+        
+
+       
+       
